@@ -1,45 +1,47 @@
 # Claude Code Skills
 
-Repositorio personal de skills para Claude Code. Contiene skills organizadas por categoría, listas para instalar en cualquier máquina.
+Personal skills repository for Claude Code. Skills are organized by category and ready to install on any machine.
 
-## Instalación rápida
+## Quick install
 
 ```bash
 git clone https://github.com/alarconrobledo/skills
 cd skills
-./install.sh         # instala todas las skills
-./install.sh sdd     # instala solo la categoría sdd
+chmod +x install.sh
+./install.sh              # install all skills
+./install.sh sdd          # install only the sdd category
+./install.sh sdd --force  # overwrite already-installed skills
 ```
 
-## Estructura
+## Structure
 
 ```
 skills/
   sdd/          # Specification-Driven Development
-  agents/       # Skills de agentes
-  dev-tools/    # Herramientas de desarrollo general
-  third-party/  # Skills extraídas de otros repos
+  agents/       # Agent skills
+  dev-tools/    # General development tools
+  third-party/  # Skills extracted from other repos
 ```
 
 ---
 
 ## SDD — Specification-Driven Development
 
-Workflow completo para desarrollar features de forma especificada y trazable.
+Complete workflow for developing features in a specified and traceable way.
 
-| Skill | Comando | Descripción |
+| Skill | Command | Description |
 |-------|---------|-------------|
-| [sdd-init](./sdd/sdd-init/README.md) | `/sdd:init` | Inicializa el proyecto SDD |
-| [sdd-specify](./sdd/sdd-specify/README.md) | `/sdd:specify` | Crea una spec de feature |
-| [sdd-clarify](./sdd/sdd-clarify/README.md) | `/sdd:clarify` | Refina y valida la spec |
-| [sdd-plan](./sdd/sdd-plan/README.md) | `/sdd:plan` | Diseña el approach técnico |
-| [sdd-tasks](./sdd/sdd-tasks/README.md) | `/sdd:tasks` | Descompone el plan en tareas |
-| [sdd-implement](./sdd/sdd-implement/README.md) | `/sdd:implement [TASK-NNN]` | Ejecuta una tarea |
-| [sdd-status](./sdd/sdd-status/README.md) | `/sdd:status` | Estado actual del proyecto |
-| [sdd-validate](./sdd/sdd-validate/README.md) | `/sdd:validate` | Verifica implementación vs spec |
-| [sdd-constitution](./sdd/sdd-constitution/README.md) | `/sdd:constitution` | Define principios del proyecto |
+| [sdd-init](./sdd/sdd-init/README.md) | `/sdd:init` | Initialize SDD project |
+| [sdd-specify](./sdd/sdd-specify/README.md) | `/sdd:specify` | Create a feature spec |
+| [sdd-clarify](./sdd/sdd-clarify/README.md) | `/sdd:clarify` | Refine and validate the spec |
+| [sdd-plan](./sdd/sdd-plan/README.md) | `/sdd:plan` | Design the technical approach |
+| [sdd-tasks](./sdd/sdd-tasks/README.md) | `/sdd:tasks` | Decompose plan into tasks |
+| [sdd-implement](./sdd/sdd-implement/README.md) | `/sdd:implement [TASK-NNN]` | Execute a single task |
+| [sdd-status](./sdd/sdd-status/README.md) | `/sdd:status` | Current project status |
+| [sdd-validate](./sdd/sdd-validate/README.md) | `/sdd:validate` | Verify implementation vs spec |
+| [sdd-constitution](./sdd/sdd-constitution/README.md) | `/sdd:constitution` | Define project principles |
 
-**Flujo:**
+**Flow:**
 ```
 init → specify → clarify → plan → tasks → implement → validate
 ```
@@ -48,32 +50,32 @@ init → specify → clarify → plan → tasks → implement → validate
 
 ## Agents
 
-| Skill | Comando | Descripción |
+| Skill | Command | Description |
 |-------|---------|-------------|
-| *(próximamente)* | — | Skills de agentes especializados |
+| *(coming soon)* | — | Specialized agent skills |
 
 ---
 
 ## Dev Tools
 
-| Skill | Comando | Descripción |
+| Skill | Command | Description |
 |-------|---------|-------------|
-| *(próximamente)* | — | Herramientas generales de desarrollo |
+| *(coming soon)* | — | General development tools |
 
 ---
 
 ## Third Party
 
-| Skill | Origen | Descripción |
+| Skill | Source | Description |
 |-------|--------|-------------|
-| *(próximamente)* | — | Skills extraídas de otros proyectos |
+| *(coming soon)* | — | Skills extracted from other projects |
 
 ---
 
-## Añadir una nueva skill
+## Adding a new skill
 
-1. Crea la carpeta en la categoría correspondiente: `categoria/nombre-skill/`
-2. Añade `SKILL.md` — instrucciones para Claude
-3. Añade `README.md` — documentación para humanos
-4. Actualiza la tabla en este README
+1. Create the folder in the right category: `category/skill-name/`
+2. Add `SKILL.md` — instructions for Claude
+3. Add `README.md` — documentation for humans
+4. Update the table in this README
 5. `git push`
