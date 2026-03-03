@@ -1,6 +1,6 @@
 # Claude Code Skills
 
-Personal skills repository for Claude Code. Skills are organized by category and ready to install on any machine.
+Personal skills repository for Claude Code. Skills are organized by functionality and ready to install on any machine.
 
 ## Quick install
 
@@ -8,41 +8,40 @@ Personal skills repository for Claude Code. Skills are organized by category and
 git clone https://github.com/alarconrobledo/skills
 cd skills
 chmod +x install.sh
-./install.sh              # install all skills
-./install.sh sdd          # install only the sdd category
-./install.sh sdd --force  # overwrite already-installed skills
+./install.sh                  # install all skills
+./install.sh workflow         # install only a category
+./install.sh workflow --force # overwrite already-installed skills
 ```
 
 ## Structure
 
 ```
 skills/
-  sdd/           # Specification-Driven Development
-  agents/        # Agent skills
-  dev-tools/     # General development tools
-  third-party/   # Skills extracted from other repos
+  workflow/    # Development process and specification workflow
+  agents/      # Multi-agent coordination and orchestration
+  frontend/    # Frontend development (React, Next.js)
 ```
 
 ---
 
-## SDD — Specification-Driven Development
+## Workflow — Specification-Driven Development
 
-Complete workflow for developing features in a specified and traceable way.
+Complete SDD workflow for developing features in a specified and traceable way.
 
 > Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
 
 | Skill | Command | Description |
 |-------|---------|-------------|
-| [sdd-init](./sdd/sdd-init/README.md) | `/sdd:init` | Initialize SDD project |
-| [sdd-prd](./sdd/sdd-prd/SKILL.md) | `/sdd:prd` | Define product requirements |
-| [sdd-specify](./sdd/sdd-specify/README.md) | `/sdd:specify` | Create a feature spec |
-| [sdd-clarify](./sdd/sdd-clarify/README.md) | `/sdd:clarify` | Refine and validate the spec |
-| [sdd-plan](./sdd/sdd-plan/README.md) | `/sdd:plan` | Design the technical approach |
-| [sdd-tasks](./sdd/sdd-tasks/README.md) | `/sdd:tasks` | Decompose plan into tasks |
-| [sdd-implement](./sdd/sdd-implement/README.md) | `/sdd:implement [TASK-NNN]` | Execute a single task |
-| [sdd-status](./sdd/sdd-status/README.md) | `/sdd:status` | Current project status |
-| [sdd-validate](./sdd/sdd-validate/README.md) | `/sdd:validate` | Verify implementation vs spec |
-| [sdd-constitution](./sdd/sdd-constitution/README.md) | `/sdd:constitution` | Define project principles |
+| [sdd-init](./workflow/sdd-init/README.md) | `/sdd:init` | Initialize SDD project |
+| [sdd-prd](./workflow/sdd-prd/SKILL.md) | `/sdd:prd` | Define product requirements |
+| [sdd-specify](./workflow/sdd-specify/README.md) | `/sdd:specify` | Create a feature spec |
+| [sdd-clarify](./workflow/sdd-clarify/README.md) | `/sdd:clarify` | Refine and validate the spec |
+| [sdd-plan](./workflow/sdd-plan/README.md) | `/sdd:plan` | Design the technical approach |
+| [sdd-tasks](./workflow/sdd-tasks/README.md) | `/sdd:tasks` | Decompose plan into tasks |
+| [sdd-implement](./workflow/sdd-implement/README.md) | `/sdd:implement [TASK-NNN]` | Execute a single task |
+| [sdd-status](./workflow/sdd-status/README.md) | `/sdd:status` | Current project status |
+| [sdd-validate](./workflow/sdd-validate/README.md) | `/sdd:validate` | Verify implementation vs spec |
+| [sdd-constitution](./workflow/sdd-constitution/README.md) | `/sdd:constitution` | Define project principles |
 
 **Flow:**
 ```
@@ -51,39 +50,35 @@ init → prd → specify → clarify → plan → tasks → implement → valida
 
 ---
 
-## Agents
+## Agents — Multi-agent coordination
+
+Skills for orchestrating and managing Claude Code agent teams.
+
+> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
 
 | Skill | Command | Description |
 |-------|---------|-------------|
-| *(coming soon)* | — | Specialized agent skills |
+| [orchestrating-agent-teams](./agents/orchestrating-agent-teams/SKILL.md) | `/orchestrating-agent-teams` | Orchestrate multi-agent Claude Code swarms |
 
 ---
 
-## Dev Tools
+## Frontend — React & Next.js
+
+Skills for frontend development, performance, and best practices.
+
+> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
 
 | Skill | Command | Description |
 |-------|---------|-------------|
-| *(coming soon)* | — | General development tools |
-
----
-
-## Third Party
-
-Skills extracted from external repos. Original authors credited below.
-
-> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin) — by Rubén Zarroca
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| [orchestrating-agent-teams](./third-party/orchestrating-agent-teams/SKILL.md) | `/orchestrating-agent-teams` | Orchestrate multi-agent Claude Code swarms |
-| [vercel-react-best-practices](./third-party/vercel-react-best-practices/SKILL.md) | `/vercel-react-best-practices` | React & Next.js performance guidelines from Vercel |
+| [vercel-react-best-practices](./frontend/vercel-react-best-practices/SKILL.md) | `/vercel-react-best-practices` | React & Next.js performance guidelines from Vercel |
 
 ---
 
 ## Adding a new skill
 
-1. Create the folder in the right category: `category/skill-name/`
-2. Add `SKILL.md` — instructions for Claude
-3. Add `README.md` — documentation for humans
-4. Update the table in this README
-5. `git push`
+1. Choose the right category folder: `workflow/`, `agents/`, or `frontend/`
+2. Create the skill folder: `category/skill-name/`
+3. Add `SKILL.md` — instructions for Claude
+4. Add `README.md` — documentation for humans
+5. Update the table in this README
+6. `git push`
