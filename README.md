@@ -17,10 +17,10 @@ chmod +x install.sh
 
 ```
 skills/
-  sdd/          # Specification-Driven Development
-  agents/       # Agent skills
-  dev-tools/    # General development tools
-  third-party/  # Skills extracted from other repos
+  sdd/           # Specification-Driven Development
+  agents/        # Agent skills
+  dev-tools/     # General development tools
+  third-party/   # Skills extracted from other repos
 ```
 
 ---
@@ -29,9 +29,12 @@ skills/
 
 Complete workflow for developing features in a specified and traceable way.
 
+> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
+
 | Skill | Command | Description |
 |-------|---------|-------------|
 | [sdd-init](./sdd/sdd-init/README.md) | `/sdd:init` | Initialize SDD project |
+| [sdd-prd](./sdd/sdd-prd/SKILL.md) | `/sdd:prd` | Define product requirements |
 | [sdd-specify](./sdd/sdd-specify/README.md) | `/sdd:specify` | Create a feature spec |
 | [sdd-clarify](./sdd/sdd-clarify/README.md) | `/sdd:clarify` | Refine and validate the spec |
 | [sdd-plan](./sdd/sdd-plan/README.md) | `/sdd:plan` | Design the technical approach |
@@ -43,7 +46,7 @@ Complete workflow for developing features in a specified and traceable way.
 
 **Flow:**
 ```
-init → specify → clarify → plan → tasks → implement → validate
+init → prd → specify → clarify → plan → tasks → implement → validate
 ```
 
 ---
@@ -66,9 +69,14 @@ init → specify → clarify → plan → tasks → implement → validate
 
 ## Third Party
 
-| Skill | Source | Description |
-|-------|--------|-------------|
-| *(coming soon)* | — | Skills extracted from other projects |
+Skills extracted from external repos. Original authors credited below.
+
+> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin) — by Rubén Zarroca
+
+| Skill | Command | Description |
+|-------|---------|-------------|
+| [orchestrating-agent-teams](./third-party/orchestrating-agent-teams/SKILL.md) | `/orchestrating-agent-teams` | Orchestrate multi-agent Claude Code swarms |
+| [vercel-react-best-practices](./third-party/vercel-react-best-practices/SKILL.md) | `/vercel-react-best-practices` | React & Next.js performance guidelines from Vercel |
 
 ---
 
