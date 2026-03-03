@@ -1,84 +1,63 @@
-# Claude Code Skills
+# cc-toolkit
 
-Personal skills repository for Claude Code. Skills are organized by functionality and ready to install on any machine.
+Personal Claude Code toolkit. Clone once, have everything ready on any machine.
 
-## Quick install
+## Quick setup
 
 ```bash
-git clone https://github.com/alarconrobledo/skills
-cd skills
-chmod +x install.sh
-./install.sh                  # install all skills
-./install.sh workflow         # install only a category
-./install.sh workflow --force # overwrite already-installed skills
+git clone https://github.com/alarconrobledo/cc-toolkit
+cd cc-toolkit
+
+# Install all standalone skills
+cd skills && ./install.sh
+
+# Install a plugin (example: SDD)
+# See plugins/sdd/README.md for instructions
 ```
 
 ## Structure
 
 ```
-skills/
-  workflow/    # Development process and specification workflow
-  agents/      # Multi-agent coordination and orchestration
-  frontend/    # Frontend development (React, Next.js)
+cc-toolkit/
+  skills/      Individual slash commands → installed to ~/.claude/skills/
+  plugins/     Multi-command systems     → each has its own install instructions
 ```
 
 ---
 
-## Workflow — Specification-Driven Development
+## Skills
 
-Complete SDD workflow for developing features in a specified and traceable way.
+Standalone commands — each works independently. Installed via `skills/install.sh`.
 
-> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| [sdd-init](./workflow/sdd-init/README.md) | `/sdd:init` | Initialize SDD project |
-| [sdd-prd](./workflow/sdd-prd/SKILL.md) | `/sdd:prd` | Define product requirements |
-| [sdd-specify](./workflow/sdd-specify/README.md) | `/sdd:specify` | Create a feature spec |
-| [sdd-clarify](./workflow/sdd-clarify/README.md) | `/sdd:clarify` | Refine and validate the spec |
-| [sdd-plan](./workflow/sdd-plan/README.md) | `/sdd:plan` | Design the technical approach |
-| [sdd-tasks](./workflow/sdd-tasks/README.md) | `/sdd:tasks` | Decompose plan into tasks |
-| [sdd-implement](./workflow/sdd-implement/README.md) | `/sdd:implement [TASK-NNN]` | Execute a single task |
-| [sdd-status](./workflow/sdd-status/README.md) | `/sdd:status` | Current project status |
-| [sdd-validate](./workflow/sdd-validate/README.md) | `/sdd:validate` | Verify implementation vs spec |
-| [sdd-constitution](./workflow/sdd-constitution/README.md) | `/sdd:constitution` | Define project principles |
-
-**Flow:**
-```
-init → prd → specify → clarify → plan → tasks → implement → validate
-```
+| Skill | Command | Category |
+|-------|---------|----------|
+| [orchestrating-agent-teams](./skills/agents/orchestrating-agent-teams/SKILL.md) | `/orchestrating-agent-teams` | Agents |
+| [vercel-react-best-practices](./skills/frontend/vercel-react-best-practices/SKILL.md) | `/vercel-react-best-practices` | Frontend |
 
 ---
 
-## Agents — Multi-agent coordination
+## Plugins
 
-Skills for orchestrating and managing Claude Code agent teams.
+Cohesive systems — multiple commands that work together as a workflow.
 
-> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
-
-| Skill | Command | Description |
-|-------|---------|-------------|
-| [orchestrating-agent-teams](./agents/orchestrating-agent-teams/SKILL.md) | `/orchestrating-agent-teams` | Orchestrate multi-agent Claude Code swarms |
+| Plugin | Commands | Source |
+|--------|----------|--------|
+| [SDD — Spec-Driven Dev](./plugins/sdd/README.md) | 10 commands (`/sdd:*`) | [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin) |
 
 ---
 
-## Frontend — React & Next.js
+## Adding a skill
 
-Skills for frontend development, performance, and best practices.
+1. Choose or create a category under `skills/` (e.g. `skills/agents/`, `skills/frontend/`)
+2. Create `skills/{category}/{skill-name}/SKILL.md` — instructions for Claude
+3. Optionally add `README.md` for human docs
+4. Update the table above
+5. `git push`
 
-> Source: [rubenzarroca/ssd-plugin](https://github.com/rubenzarroca/ssd-plugin)
+## Adding a plugin
 
-| Skill | Command | Description |
-|-------|---------|-------------|
-| [vercel-react-best-practices](./frontend/vercel-react-best-practices/SKILL.md) | `/vercel-react-best-practices` | React & Next.js performance guidelines from Vercel |
-
----
-
-## Adding a new skill
-
-1. Choose the right category folder: `workflow/`, `agents/`, or `frontend/`
-2. Create the skill folder: `category/skill-name/`
-3. Add `SKILL.md` — instructions for Claude
-4. Add `README.md` — documentation for humans
-5. Update the table in this README
-6. `git push`
+1. Create `plugins/{plugin-name}/`
+2. Add `README.md` with what it is + how to install it
+3. Add `skills/` subfolder with the command files
+4. Update the table above
+5. `git push`
